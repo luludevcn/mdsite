@@ -2,39 +2,33 @@
 import PostContent from '@/components/blog/PostContent';
 import { getPostBySlug } from '@/lib/markdown/mdParser';
 import TableOfContents from '@/components/blog/TableOfContent';
-import { ResolvingMetadata, Metadata } from 'next';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+
 interface PostPageProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>
 }
 
-export async function generateMetadata({ params }: PostPageProps,
-  parent?: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
   try {
     const { slug } = await params;
     const post = await getPostBySlug(slug)
-    const previousImages = (await parent)?.openGraph?.images || []
 
     return {
       title: post.title,
-      description: post.excerpt,
+      description: post.description,
       openGraph: {
         title: post.title,
-        description: post.excerpt,
+        description: post.description,
         images: post.coverImage
-          ? [{ url: post.coverImage }, ...previousImages]
-          : previousImages,
       },
       alternates: {
         canonical: `/posts/${slug}`
       }
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return {
       title: 'Post Not Found',
       description: 'The requested post does not exist.'
@@ -67,7 +61,7 @@ export default async function PostPage({ params }: PostPageProps) {
       </div>
     )
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return notFound()
   }
 }
