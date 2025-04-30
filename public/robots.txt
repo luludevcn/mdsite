@@ -1,4 +1,13 @@
+# *
 User-agent: *
 Allow: /
 
-Sitemap: https://www.luludev.cn/sitemap-index.xml
+# *
+User-agent: *
+Disallow: /admin
+
+# Host
+Host: https://www.luludev.cn
+
+# Sitemaps
+Sitemap: https://www.luludev.cn/sitemap.xml
