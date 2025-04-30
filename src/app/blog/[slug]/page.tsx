@@ -17,6 +17,8 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 
     return {
       title: post.title,
+      keywords: post.keywords,
+      authors: [{ name: post.author, url: "https://luludev.cn" }],
       description: post.description,
       openGraph: {
         title: post.title,
