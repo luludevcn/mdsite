@@ -8,7 +8,7 @@ export default function ThemeToggle() {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    const isDark = document.documentElement.classList.contains('dark');
+    const isDark = document.documentElement.classList.contains('dark') || localStorage.getItem('theme') === 'dark';
     setEnabled(isDark);
   }, []);
 
@@ -26,15 +26,13 @@ export default function ThemeToggle() {
     <Switch
       checked={enabled}
       onChange={setEnabled}
-      className={`${
-        enabled ? 'bg-gray-600' : 'bg-gray-200'
-      } relative inline-flex h-6 w-11 items-center rounded-full`}
+      className={`${enabled ? 'bg-gray-600' : 'bg-gray-200'
+        } relative inline-flex h-6 w-11 items-center rounded-full`}
     >
       <span className="sr-only">Toggle dark mode</span>
       <span
-        className={`${
-          enabled ? 'translate-x-6' : 'translate-x-1'
-        } inline-block h-4 w-4 transform rounded-full bg-white transition`}
+        className={`${enabled ? 'translate-x-6' : 'translate-x-1'
+          } inline-block h-4 w-4 transform rounded-full bg-white transition`}
       >
         {enabled ? (
           <MoonIcon className="h-3 w-3 text-gray-600" />
