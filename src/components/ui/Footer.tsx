@@ -2,6 +2,11 @@ import Link from 'next/link';
 
 const footerLinks = [
   { name: 'GitHub', href: 'https://github.com/luludevcn' },
+  { name: 'TaiwindCss', href: 'https://www.tailwindcss.cn/' },
+  { name: 'NextJS', href: 'https://nextjs.org/' },
+  { name: 'Vercel', href: 'https://vercel.com/' },
+  { name: 'Deepseek', href: 'https://www.deepseek.com/' },
+  { name: 'Aliyun', href: 'https://www.aliyun.com/' }
 ];
 
 export default function Footer() {
