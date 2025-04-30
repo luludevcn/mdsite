@@ -45,7 +45,7 @@ export default function PostCard({ post }: PostCardProps) {
             {formatDate(new Date(post.date), 'MMMM d, yyyy')}
           </span>
           <Link
-            href={`/${post.slug}`}
+            href={`/blog/${post.slug}`}
             className="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium"
           >
             Read more →
