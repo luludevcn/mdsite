@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import StoreProvider from '@/providers';
 import Header from '@/components/ui/Header';
 import Footer from '@/components/ui/Footer';
+import { Analytics } from "@vercel/analytics/react"
 
 
 export default function RootLayout({
@@ -19,6 +20,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </StoreProvider>
+        <Analytics />
       </body>
     </html>
   );
