@@ -26,7 +26,7 @@ export default function Header() {
                 <div className="flex-shrink-0 flex items-center">
                   <Link href="/">
                     <span className="text-xl font-bold text-gray-900 dark:text-white">
-                      Lulu Dev
+                      <i className='text-blue-500'>LuluDev</i>
                     </span>
                   </Link>
                 </div>
