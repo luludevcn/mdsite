@@ -4,6 +4,7 @@ import Header from '@/components/ui/Header';
 import Footer from '@/components/ui/Footer';
 import { Analytics } from "@vercel/analytics/react"
 import Script from 'next/script';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 
 export default function RootLayout({
@@ -46,6 +47,7 @@ export default function RootLayout({
           </div>
         </StoreProvider>
         <Analytics />
+        <SpeedInsights />
 
       </body>
     </html>
