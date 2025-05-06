@@ -8,7 +8,7 @@ module.exports = {
     robotsTxtOptions: {
         policies: [
             { userAgent: '*', allow: '/' },
-            { userAgent: '*', disallow: ['/admin'] },
+            { userAgent: '*', disallow: ['/admin', '/private', '/api'] },
         ],
     },
 };
