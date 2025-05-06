@@ -58,6 +58,7 @@ export default function About() {
                             <a
                                 href={output.target}
                                 target="_blank"
+                                key={output.label}
                                 className="flex shadow-lg p-3 bg-opacity-20 bg-blue-100 text-blue-800 rounded hover:underline"
                             >
                                 {output.label}

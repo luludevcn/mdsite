@@ -5,6 +5,8 @@ Allow: /
 # *
 User-agent: *
 Disallow: /admin
+Disallow: /private
+Disallow: /api
 
 # Host
 Host: https://www.luludev.cn
