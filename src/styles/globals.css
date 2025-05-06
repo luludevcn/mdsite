@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+@layer base {
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: bold;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: bold;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: bold;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
 :root {
   --background: #e7e6e2;
   --foreground: #323030;
