@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { formatDate } from 'date-fns';
-import { PostMeta } from '@/lib/markdown/mdParser';
+import { PostMeta } from '@/types/type';
 
 interface PostCardProps {
   post: PostMeta;
@@ -26,7 +26,7 @@ export default function PostCard({ post }: PostCardProps) {
           {post.tags?.map((tag) => (
             <span
               key={tag}
-              className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 text-xs rounded-full"
+              className="px-2 py-1 bg-amber-50 dark:bg-blue-900 text-blue-500 dark:text-blue-100 text-xs rounded-full"
             >
               {tag}
             </span>
@@ -46,7 +46,7 @@ export default function PostCard({ post }: PostCardProps) {
           </span>
           <Link
             href={`/blog/${post.slug}`}
-            className="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium"
+            className="text-blue-500 dark:text-blue-400 hover:underline text-sm font-medium"
           >
             Read more →
           </Link>

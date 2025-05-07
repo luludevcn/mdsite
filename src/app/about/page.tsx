@@ -43,7 +43,7 @@ export default function About() {
             <div className="flex flex-wrap gap-4">
                 {
                     skills.map((skill) => (
-                        <span key={skill} className="flex shadow-lg p-3 capitalize bg-opacity-20 bg-blue-100 rounded text-blue-800">
+                        <span key={skill} className="flex shadow-lg p-3 capitalize bg-opacity-20 bg-amber-50 rounded text-blue-500">
                             {skill}
                         </span>
                     ))
@@ -59,7 +59,7 @@ export default function About() {
                                 href={output.target}
                                 target="_blank"
                                 key={output.label}
-                                className="flex shadow-lg p-3 bg-opacity-20 bg-blue-100 text-blue-800 rounded hover:underline"
+                                className="flex shadow-lg p-3 bg-opacity-20 bg-amber-50 text-blue-500 rounded hover:underline"
                             >
                                 {output.label}
                             </a>
@@ -78,7 +78,7 @@ export default function About() {
                             href={contact.target}
                             target="_blank"
                             key={contact.label}
-                            className="flex shadow-lg p-3 bg-opacity-20  bg-blue-100 text-blue-800 rounded hover:underline"
+                            className="flex shadow-lg p-3 bg-opacity-20  bg-amber-50 text-blue-500 rounded hover:underline"
                         >
                             {contact.label}
                         </a>

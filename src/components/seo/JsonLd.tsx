@@ -1,4 +1,4 @@
-import { Post } from '@/lib/markdown/mdParser';
+import { Post } from '@/types/type';
 import { BlogPosting } from 'schema-dts';
 
 interface JsonLdProps {

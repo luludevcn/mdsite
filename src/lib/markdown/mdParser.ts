@@ -2,23 +2,9 @@ import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 import { readFile } from 'fs/promises';
+import { Post, PostMeta } from '@/types/type';
 
 const postsDirectory = join(process.cwd(), 'src/content/posts');
-
-export interface PostMeta {
-  title: string;
-  date: string;
-  keywords: string;
-  description: string;
-  author: string;
-  slug: string;
-  tags?: string[];
-  coverImage?: string;
-}
-
-export interface Post extends PostMeta {
-  content: string;
-}
 
 export async function getPostBySlug(slug: string): Promise<Post> {
   const fullPath = join(postsDirectory, `${slug}.md`);
@@ -45,3 +31,4 @@ export function getAllPosts(): PostMeta[] {
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
+
